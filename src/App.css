@@ -1,12 +1,81 @@
+body {
+  overflow: hidden;
+}
+
 .App {
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  background-color: rgba(197, 182, 180, 0.296);
+  overflow: hidden;
 }
 
-.barier {
+/* .transition {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  transition: width 2s, height 1s, transform 2s;
+}
+
+.transition:hover {
+  width: 200px;
+  height: 200px;
+  transform: rotate(360deg);
+} */
+
+.top {
   width: 100%;
-  height: 1px;
-  border-top: 1px solid black;
+  height: 50vh;
+  display: flex;
+  align-items: end;
+}
+
+.bot {
+  width: 100%;
+  height: 50vh;
+}
+
+.horizon-line {
+  position: absolute;
+  width: 100%;
+  height: 5px;
+  display: flex;
+  z-index: -1;
+}
+
+.horizon-left {
+  width: 50%;
+  background: linear-gradient(to right, rgb(250,146,132) 0%, rgb(250, 200, 193) 100%);
+  filter: blur(15px);
+}
+
+.horizon-right {
+  width: 50%;
+  background: linear-gradient(to right, rgb(250, 200, 193) 0%, rgb(250,146,132) 100%);
+  filter: blur(15px);
+}
+
+.sun {
+  background-color: rgb(252, 243, 243);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.sun {
+  animation: sunrise 15s linear infinite;
+}
+
+@keyframes sunrise {
+  from {
+    bottom: 0%;
+  }
+
+  to {
+    bottom: 100%;
+  }
 }
